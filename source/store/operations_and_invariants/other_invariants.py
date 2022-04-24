@@ -546,5 +546,14 @@ class Transmission(InvariantOther):
             return 'Disconnected graph'
 
     @staticmethod
-    def print(graph, precision):
-        return Utils.print_dict(Transmission.calculate(graph), precision)
+    def calculate(graph):
+        return list(Utils.MainEigenvalue(SignlessLaplacianMatrix.calculate(graph)))
+
+
+class MinimumGraphColoring(InvariantOther):
+    name = "Minimum graph coloring"
+    type = "dict"
+
+    @staticmethod
+    def calculate(graph):
+        return dict(sorted(nx.greedy_color(graph).items()))
