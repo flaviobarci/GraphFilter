@@ -16,7 +16,7 @@ numpy>=1.21
 pefile==2021.5.13
 Pillow>=9.0.0
 git+https://github.com/coin-or/pulp@master#egg=PulP
-git+git://github.com/pyinstaller/pyinstaller@develop#egg=pyinstaller
+git+https://github.com/pyinstaller/pyinstaller@develop#egg=pyinstaller
 pyinstaller-hooks-contrib==2021.1
 pyparsing==2.4.7
 PyQt5==5.15.4
