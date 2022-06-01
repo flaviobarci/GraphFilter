@@ -19,9 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.8'
-    - name: Install
-      run: sudo apt-get --reinstall install libqt5dbus5 libqt5widgets5 libqt5network5 libqt5gui5 libqt5core5a libxcb-xinerama0
+        python-version: '3.7.9'
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Build project
