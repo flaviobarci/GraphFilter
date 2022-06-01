@@ -1,0 +1,24 @@
+# This workflow will upload a Python Package using Twine when a release is created
+# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Upload Python Package
+
+on:
+  workflow_run
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.7'
+    - name: Build project
+      run: pyinstaller --icon ./resources/icons/hexagon.png --add-data "./resources/data:resources/data" --add-data "./resources/icons:resources/icons" --collect-data pulp --onefile --clean --noconfirm --noconsole --name GraphFilter-x.x.x-linux app.py
