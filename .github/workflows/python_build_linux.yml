@@ -20,9 +20,7 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.7.9'
-    - name: install
-      run: sudo apt-get install libxcb-iccm4
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Build project
-      run: export QT_DEBUG_PLUGINS=1; pyinstaller --icon ./resources/icons/hexagon.png --add-data "./resources/data:resources/data" --add-data "./resources/icons:resources/icons" --collect-data pulp --onefile --clean --noconfirm --noconsole --name GraphFilter-x.x.x-linux app.py
+      run: export QT_DEBUG_PLUGINS=1;export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb; pyinstaller --icon ./resources/icons/hexagon.png --add-data "./resources/data:resources/data" --add-data "./resources/icons:resources/icons" --collect-data pulp --onefile --clean --noconfirm --noconsole --name GraphFilter-x.x.x-linux app.py
