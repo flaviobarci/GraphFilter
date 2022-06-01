@@ -21,7 +21,7 @@ jobs:
       with:
         python-version: '3.7.9'
     - name: install
-      run: sudo apt install libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0
+      run: sudo apt install libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Build project
