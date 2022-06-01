@@ -9,7 +9,7 @@
 name: Python Build Linux
 
 on:
-  workflow_run
+  workflow_dispatch:
 
 jobs:
   deploy:
