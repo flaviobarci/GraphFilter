@@ -21,7 +21,7 @@ jobs:
       with:
         python-version: '3.7.9'
     - name: install
-      run: sudo apt --reinstall install libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xkb-dev libxkbcommon-x11-0 libxcb-util1
+      run: sudo apt --reinstall install libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xkb-dev libxkbcommon-x11-0 libxcb-util1 libqt5x11extras5
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Build project
