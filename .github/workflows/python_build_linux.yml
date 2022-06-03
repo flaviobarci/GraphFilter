@@ -20,9 +20,11 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.7.9'
-    - name: install
-      run: sudo apt --reinstall install libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xkb-dev libxkbcommon-x11-0 libxcb-util1 libqt5x11extras5 xvfb x11-utils pyqt5-dev-tools
-    - name: Install dependencies
+    - name: Install Dependencies
       run: pip install -r requirements.txt
     - name: Build project
-      run: export QT_DEBUG_PLUGINS=1; pyinstaller --icon ./resources/icons/hexagon.png --add-data "./resources/icons:resources/icons" --collect-data pulp --onefile --clean --noconfirm --noconsole --name GraphFilter-x.x.x-linux app.py
+      run: pyinstaller --icon ./resources/icons/hexagon.png --add-data "./resources/icons:resources/icons" --collect-data pulp --onefile --clean --noconfirm --noconsole --name GraphFilter-x.x.x-linux app.py
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        path: dist
