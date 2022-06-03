@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Pyinstaller
-      run: pyinstaller --icon ./resources/icons/hexagon.png --add-data "./resources/icons;resources/icons" --collect-data pulp --onefile --clean --noconfirm --noconsole --name GraphFilter-x.x.x-linux app.py
+      run: pyinstaller --icon .\resources\icons\hexagon.ico --add-data ".\resources\data;resources\data" --add-data ".\resources\icons;resources\icons" --clean --noconfirm --collect-data pulp --onefile --noconsole --name GraphFilter-x.x.x-win app.py
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
